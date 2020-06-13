@@ -7,6 +7,7 @@ const geoCode = require('./utils/geoCode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.get('/weather', (req, res) => {
 
@@ -44,6 +45,6 @@ app.get('/weather', (req, res) => {
         }
     })
 })
-app.listen(3000, () => {
-    console.log('working')
+app.listen(port, () => {
+    console.log('working: ' + port)
 })
